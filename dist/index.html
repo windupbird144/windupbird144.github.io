@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:,">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+  <script type="module" crossorigin src="/assets/index.ec3bb5e8.js"></script>
+</head>
+<body>
+    <main>
+        <h3>PFQ Pokedex checklist generator</h3>
+        <section>
+            <h3>Instructions</h3>
+            <ol>
+                <li>While logged into PFQ, visit <a href="https://pokefarm.com/dex" target="_blank">your Pokedex</a></li>
+                <li><kbd>Ctrl+U</kbd> View the source of the page. Right click the page and press 'View Page Source'. The source code should open in a new tab.</li>
+                <li><kbd>Ctrl+A</kbd> Select all the text</li>
+                <li><kbd>Ctrl+C</kbd> Copy all the text</li>
+                <li><kbd>Ctrl+V</kbd> Paste all the text in the textbox below</li>
+            </ol>
+        </section>
+        <section _="on htmx:afterOnLoad remove @hidden from #output">
+            <form>
+                <div>            
+                    <label for="pagesource">Paste Pokedex page source here:</label><br>
+                    <textarea name="pagesource" id="pagesource"></textarea>
+                </div>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </section>
+        <section id="output">
+            <h3>Result</h3>
+            <textarea readonly name="result" id="result" cols="30" rows="10"></textarea>
+            <button _="on click
+                writeText(the #result's value) into the navigator's clipboard
+                put 'Copied!' into me
+                wait 1s
+                put 'Copy' into me">Copy</button>
+        </section>
+    </main>
+    
+</body>
+</html>

@@ -1,27 +1,64 @@
-body {
-  padding-top: 10px;
+#root {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+code {
+  background: #d3d3d3;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-size: calc(1em - 2px);
+  display: inline-block;
+}
+details p {
+  margin: 0.5em;
+  text-align: left;
+}
+main {
+  overflow-y: auto;
+  padding: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+a:visited {
+  color: darkorchid;
+}
+
+nav {
+  background-color: whitesmoke;
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .counter {
-  max-width: 400px;
+  justify-self: center;
   display: grid;
+  justify-content: stretch;
   row-gap: 8px;
   text-align: center;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
-  grid-gap: 8px;
+.counter texarea {
+  width: 100%;
 }
-
-.buttons>button {
-  aspect-ratio: 1 / 1;
-}
-
 
 .choice {
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .start-over {

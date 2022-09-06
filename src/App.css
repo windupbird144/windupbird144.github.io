@@ -34,7 +34,7 @@ a:visited {
 
 nav {
   background-color: whitesmoke;
-  display: flex;
+  display: grid;
   padding: 8px;
   gap: 8px;
 }
@@ -69,4 +69,19 @@ nav {
 #app {
   display: grid;
   justify-content: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+  grid-gap: 8px;
+}
+
+.buttons>button {
+  aspect-ratio: 1 / 1;
+}
+
+.start-over {
+  margin-top: 2em;
+  margin-left: auto;
 }

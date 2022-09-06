@@ -1,23 +1,26 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { HashRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import * as t from "./tyranuevavu";
+import TyranuEvavuCounterButtons from './TyranuEvavuCounterButtons';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <main>
         <Routes>
-          <Route path="" element={<TyranuEvavuCounter />} />
-          <Route path="tyranu-evavu-counter" element={<TyranuEvavuCounter />} />
-          <Route path="pyramids" element={<Pyramids />} />
+          <Route path="/" element={<TyranuEvavuCounter />} />
+          <Route path="/tyranu-evavu-counter" element={<TyranuEvavuCounter />} />
+          <Route path="/tyranu-evavu-counter-buttons" element={<TyranuEvavuCounterButtons />} />
+          <Route path="/pyramids" element={<Pyramids />} />
         </Routes>
       </main>
       <nav>
-        <Link to="tyranu-evavu-counter">Tyranu Evavu Counter</Link>
+        <Link to="/tyranu-evavu-counter">Tyranu Evavu Counter</Link>
+        <Link to="/tyranu-evavu-counter-buttons">Tyranu Evavu Counter with buttons</Link>
         {/* <Link to="pyramids">Pyramids</Link> */}
       </nav>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
